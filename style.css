@@ -1,0 +1,247 @@
+:root {
+  --bg: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+  --card-bg: rgba(255, 255, 255, 0.2);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --text-dark: #1f2937;
+  --text-light: #ffffff;
+  --accent: #2563eb;
+  --radius: 20px;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+}
+
+.app {
+  width: 95%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 1rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 2.2rem;
+  color: var(--text-light);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.tagline {
+  margin: 0.2rem 0 1rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.search-box input {
+  flex: 1;
+  min-width: 180px;
+  padding: 0.7rem;
+  border-radius: var(--radius);
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.search-box button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  background: #1e4fd1;
+}
+
+/* ===== Temperature Unit Switch ===== */
+.unit-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+
+.unit-label {
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.switch input:checked + .slider {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(24px);
+  background-color: #1e4fd1;
+}
+
+/* Loader animation */
+.loader {
+  margin: 1.5rem auto;
+  border: 6px solid rgba(255, 255, 255, 0.4);
+  border-top: 6px solid var(--accent);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Weather Card */
+.weather-card {
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  color: var(--text-light);
+  margin-top: 1.2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.weather-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.weather-header img {
+  width: 80px;
+  height: 80px;
+}
+
+.weather-body {
+  margin-top: 0.8rem;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.big {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.error {
+  color: #b91c1c;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: var(--radius);
+  padding: 0.8rem;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.footer {
+  margin-top: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+.footer a{
+    color: white;
+}
+/* ===== Mobile Responsiveness ===== */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .search-box input {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+    min-width: 150px;
+  }
+
+  .search-box button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .weather-card {
+    padding: 1rem;
+  }
+
+  .big {
+    font-size: 2rem;
+  }
+
+  .unit-switch {
+    margin-top: 0.6rem;
+  }
+}

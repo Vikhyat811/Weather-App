@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkyWatch — Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1116/1116453.png" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1 class="title">🌦️ SkyWatch</h1>
+      <p class="tagline">Real-time Weather Powered by WeatherAPI</p>
+    </header>
+
+    <section class="search-box">
+      <input
+        id="cityInput"
+        type="text"
+        placeholder="🔍 Enter city name..."
+        autocomplete="off"
+      />
+      <button id="searchBtn">Search</button>
+    </section>
+
+    <!-- Temperature Unit Toggle -->
+    <div class="unit-switch">
+      <span class="unit-label">°C</span>
+      <label class="switch">
+        <input id="unitToggle" type="checkbox" />
+        <span class="slider"></span>
+      </label>
+      <span class="unit-label">°F</span>
+    </div>
+
+    <div id="loader" class="loader hidden"></div>
+
+    <section id="result" class="weather-card hidden">
+      <div class="weather-header">
+        <img id="icon" src="" alt="Weather icon" />
+        <div>
+          <h2 id="location">City</h2>
+          <p id="desc">Description</p>
+        </div>
+      </div>
+
+      <div class="weather-body">
+        <p><span id="temp" class="big">--°C</span></p>
+        <p><b>Feels like:</b> <span id="feels">--°C</span></p>
+        <p><b>Humidity:</b> <span id="humidity">--%</span></p>
+        <p><b>Wind Speed:</b> <span id="wind">-- km/h</span></p>
+      </div>
+    </section>
+
+    <p id="error" class="error hidden"></p>
+
+    <footer class="footer">
+      <small>Made with ❤️ By <a href="https://www.linkedin.com/in/vikhyat-bansal-6b4a37306/">Vikhyat Bansal</a></small>
+    </footer>
+  </div>
+    <script type="module" src="app.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
