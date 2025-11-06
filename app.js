@@ -81,8 +81,8 @@ class WeatherData {
 // The rest of the app: UI wiring (same UI you already have)
 class WeatherApp {
   constructor() {
-    this.apiKey = "f25bbf4b0d5644b3ae531401250111"; // WeatherAPI key
-    this.baseUrl = "https://api.weatherapi.com/v1/current.json";
+    this.apiKey = ""; // WeatherAPI key
+    this.baseUrl = "";
 
     this.cityInput = document.querySelector("#cityInput");
     this.searchBtn = document.querySelector("#searchBtn");
@@ -169,3 +169,4 @@ class WeatherApp {
 window.addEventListener("DOMContentLoaded", () => {
   window.app = new WeatherApp();
 });
+
