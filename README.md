@@ -56,7 +56,8 @@ To develop an **interactive, responsive, and real-time Weather Forecasting App**
 3. Import this repository.  
 4. Click **Deploy** — your project will be live instantly.  
    *(Vercel automatically redeploys on every Git commit.)*
-NOTE: Put your OpenWeatherMap API key in `app.js`:
+
+NOTE: Put your WeatherAPI API key in `app.js`:
    ```js
    config.apiKey = 'YOUR_API_KEY_HERE';
 
